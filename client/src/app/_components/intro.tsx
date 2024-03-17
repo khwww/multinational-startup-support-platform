@@ -7,36 +7,6 @@ export function Intro() {
       <h1 className='text-5xl md:text-8xl font-bold tracking-tighter leading-tight md:pr-8'>
         G - Start Up
       </h1>
-<<<<<<< HEAD
-      
-      <h2>
-        <a
-          href="/posts/space/"
-          className="underline hover:text-blue-600 duration-200 transition-colors"
-        >
-          창업 공간
-        </a>
-      </h2>
-      <h2>
-        <a
-          href="/posts/community/"
-          className="underline hover:text-blue-600 duration-200 transition-colors"
-        >
-          커뮤니티
-        </a>
-      </h2>
-      
-      <h4 className="text-center md:text-left text-lg mt-5 md:pl-8">
-        A statically generated blog example using{" "}
-        <a
-          href="https://nextjs.org/"
-          className="underline hover:text-blue-600 duration-200 transition-colors"
-        >
-          Next.js
-        </a>{" "}
-        and {CMS_NAME}.
-      </h4>
-=======
       <nav>
         <ul className='flex'>
           <li className='mr-6'>
@@ -64,8 +34,8 @@ export function Intro() {
           </li>
           <li className='mr-6'>
             <Link
-              as={`/startup-space`}
-              href='/startup-space'
+              as={`/space`}
+              href='/space'
               className='hover:underline'
             >
               창업공간
@@ -73,8 +43,8 @@ export function Intro() {
           </li>
           <li className='mr-6'>
             <Link
-              as={`/experience-share`}
-              href='/experience-share'
+              as={`/community`}
+              href='/community'
               className='hover:underline'
             >
               경험 공유
@@ -82,7 +52,6 @@ export function Intro() {
           </li>
         </ul>
       </nav>
->>>>>>> main
     </section>
   );
 }

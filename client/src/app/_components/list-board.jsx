@@ -54,7 +54,7 @@ export default function CommunityBoard() {
         </Table>
       </TableContainer>
       <div style={{ textAlign: 'right', marginRight: '1rem', marginTop: '1rem' }}>
-        <Link href="/posts/community/write">
+        <Link href="/community/write">
           <Button
             color="primary"
             startIcon={<AddIcon />}

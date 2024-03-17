@@ -2571,7 +2571,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 "use strict";
 /* __next_internal_client_entry_do_not_use__  cjs */ 
 const { createProxy } = __webpack_require__(/*! next/dist/build/webpack/loaders/next-flight-loader/module-proxy */ "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-loader/module-proxy.js");
-module.exports = createProxy("C:\\Users\\EAN108\\Desktop\\gstart\\multinational-startup-support-platform\\client\\node_modules\\@mui\\icons-material\\Add.js");
+module.exports = createProxy("C:\\test\\multinational-startup-support-platform\\client\\node_modules\\@mui\\icons-material\\Add.js");
 
 
 /***/ }),
@@ -2583,7 +2583,7 @@ module.exports = createProxy("C:\\Users\\EAN108\\Desktop\\gstart\\multinational-
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 /* __next_internal_client_entry_do_not_use__ default,buttonClasses,* auto */ const { createProxy } = __webpack_require__(/*! next/dist/build/webpack/loaders/next-flight-loader/module-proxy */ "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-loader/module-proxy.js");
-module.exports = createProxy("C:\\Users\\EAN108\\Desktop\\gstart\\multinational-startup-support-platform\\client\\node_modules\\@mui\\material\\Button\\index.js");
+module.exports = createProxy("C:\\test\\multinational-startup-support-platform\\client\\node_modules\\@mui\\material\\Button\\index.js");
 
 
 /***/ }),
@@ -2595,7 +2595,7 @@ module.exports = createProxy("C:\\Users\\EAN108\\Desktop\\gstart\\multinational-
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 /* __next_internal_client_entry_do_not_use__ default,cardActionAreaClasses,* auto */ const { createProxy } = __webpack_require__(/*! next/dist/build/webpack/loaders/next-flight-loader/module-proxy */ "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-loader/module-proxy.js");
-module.exports = createProxy("C:\\Users\\EAN108\\Desktop\\gstart\\multinational-startup-support-platform\\client\\node_modules\\@mui\\material\\CardActionArea\\index.js");
+module.exports = createProxy("C:\\test\\multinational-startup-support-platform\\client\\node_modules\\@mui\\material\\CardActionArea\\index.js");
 
 
 /***/ }),
@@ -2607,7 +2607,7 @@ module.exports = createProxy("C:\\Users\\EAN108\\Desktop\\gstart\\multinational-
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 /* __next_internal_client_entry_do_not_use__ default,cardContentClasses,* auto */ const { createProxy } = __webpack_require__(/*! next/dist/build/webpack/loaders/next-flight-loader/module-proxy */ "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-loader/module-proxy.js");
-module.exports = createProxy("C:\\Users\\EAN108\\Desktop\\gstart\\multinational-startup-support-platform\\client\\node_modules\\@mui\\material\\CardContent\\index.js");
+module.exports = createProxy("C:\\test\\multinational-startup-support-platform\\client\\node_modules\\@mui\\material\\CardContent\\index.js");
 
 
 /***/ }),
@@ -2619,7 +2619,7 @@ module.exports = createProxy("C:\\Users\\EAN108\\Desktop\\gstart\\multinational-
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 /* __next_internal_client_entry_do_not_use__ default,cardClasses,* auto */ const { createProxy } = __webpack_require__(/*! next/dist/build/webpack/loaders/next-flight-loader/module-proxy */ "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-loader/module-proxy.js");
-module.exports = createProxy("C:\\Users\\EAN108\\Desktop\\gstart\\multinational-startup-support-platform\\client\\node_modules\\@mui\\material\\Card\\index.js");
+module.exports = createProxy("C:\\test\\multinational-startup-support-platform\\client\\node_modules\\@mui\\material\\Card\\index.js");
 
 
 /***/ }),
@@ -2631,7 +2631,7 @@ module.exports = createProxy("C:\\Users\\EAN108\\Desktop\\gstart\\multinational-
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 /* __next_internal_client_entry_do_not_use__ default,gridClasses,* auto */ const { createProxy } = __webpack_require__(/*! next/dist/build/webpack/loaders/next-flight-loader/module-proxy */ "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-loader/module-proxy.js");
-module.exports = createProxy("C:\\Users\\EAN108\\Desktop\\gstart\\multinational-startup-support-platform\\client\\node_modules\\@mui\\material\\Grid\\index.js");
+module.exports = createProxy("C:\\test\\multinational-startup-support-platform\\client\\node_modules\\@mui\\material\\Grid\\index.js");
 
 
 /***/ }),
@@ -2643,7 +2643,7 @@ module.exports = createProxy("C:\\Users\\EAN108\\Desktop\\gstart\\multinational-
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 /* __next_internal_client_entry_do_not_use__ default,paperClasses,* auto */ const { createProxy } = __webpack_require__(/*! next/dist/build/webpack/loaders/next-flight-loader/module-proxy */ "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-loader/module-proxy.js");
-module.exports = createProxy("C:\\Users\\EAN108\\Desktop\\gstart\\multinational-startup-support-platform\\client\\node_modules\\@mui\\material\\Paper\\index.js");
+module.exports = createProxy("C:\\test\\multinational-startup-support-platform\\client\\node_modules\\@mui\\material\\Paper\\index.js");
 
 
 /***/ }),
@@ -2655,7 +2655,7 @@ module.exports = createProxy("C:\\Users\\EAN108\\Desktop\\gstart\\multinational-
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 /* __next_internal_client_entry_do_not_use__ default,tableBodyClasses,* auto */ const { createProxy } = __webpack_require__(/*! next/dist/build/webpack/loaders/next-flight-loader/module-proxy */ "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-loader/module-proxy.js");
-module.exports = createProxy("C:\\Users\\EAN108\\Desktop\\gstart\\multinational-startup-support-platform\\client\\node_modules\\@mui\\material\\TableBody\\index.js");
+module.exports = createProxy("C:\\test\\multinational-startup-support-platform\\client\\node_modules\\@mui\\material\\TableBody\\index.js");
 
 
 /***/ }),
@@ -2667,7 +2667,7 @@ module.exports = createProxy("C:\\Users\\EAN108\\Desktop\\gstart\\multinational-
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 /* __next_internal_client_entry_do_not_use__ default,tableCellClasses,* auto */ const { createProxy } = __webpack_require__(/*! next/dist/build/webpack/loaders/next-flight-loader/module-proxy */ "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-loader/module-proxy.js");
-module.exports = createProxy("C:\\Users\\EAN108\\Desktop\\gstart\\multinational-startup-support-platform\\client\\node_modules\\@mui\\material\\TableCell\\index.js");
+module.exports = createProxy("C:\\test\\multinational-startup-support-platform\\client\\node_modules\\@mui\\material\\TableCell\\index.js");
 
 
 /***/ }),
@@ -2679,7 +2679,7 @@ module.exports = createProxy("C:\\Users\\EAN108\\Desktop\\gstart\\multinational-
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 /* __next_internal_client_entry_do_not_use__ default,tableContainerClasses,* auto */ const { createProxy } = __webpack_require__(/*! next/dist/build/webpack/loaders/next-flight-loader/module-proxy */ "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-loader/module-proxy.js");
-module.exports = createProxy("C:\\Users\\EAN108\\Desktop\\gstart\\multinational-startup-support-platform\\client\\node_modules\\@mui\\material\\TableContainer\\index.js");
+module.exports = createProxy("C:\\test\\multinational-startup-support-platform\\client\\node_modules\\@mui\\material\\TableContainer\\index.js");
 
 
 /***/ }),
@@ -2691,7 +2691,7 @@ module.exports = createProxy("C:\\Users\\EAN108\\Desktop\\gstart\\multinational-
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 /* __next_internal_client_entry_do_not_use__ default,tableHeadClasses,* auto */ const { createProxy } = __webpack_require__(/*! next/dist/build/webpack/loaders/next-flight-loader/module-proxy */ "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-loader/module-proxy.js");
-module.exports = createProxy("C:\\Users\\EAN108\\Desktop\\gstart\\multinational-startup-support-platform\\client\\node_modules\\@mui\\material\\TableHead\\index.js");
+module.exports = createProxy("C:\\test\\multinational-startup-support-platform\\client\\node_modules\\@mui\\material\\TableHead\\index.js");
 
 
 /***/ }),
@@ -2703,7 +2703,7 @@ module.exports = createProxy("C:\\Users\\EAN108\\Desktop\\gstart\\multinational-
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 /* __next_internal_client_entry_do_not_use__ default,tableRowClasses,* auto */ const { createProxy } = __webpack_require__(/*! next/dist/build/webpack/loaders/next-flight-loader/module-proxy */ "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-loader/module-proxy.js");
-module.exports = createProxy("C:\\Users\\EAN108\\Desktop\\gstart\\multinational-startup-support-platform\\client\\node_modules\\@mui\\material\\TableRow\\index.js");
+module.exports = createProxy("C:\\test\\multinational-startup-support-platform\\client\\node_modules\\@mui\\material\\TableRow\\index.js");
 
 
 /***/ }),
@@ -2715,7 +2715,7 @@ module.exports = createProxy("C:\\Users\\EAN108\\Desktop\\gstart\\multinational-
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 /* __next_internal_client_entry_do_not_use__ default,tableClasses,* auto */ const { createProxy } = __webpack_require__(/*! next/dist/build/webpack/loaders/next-flight-loader/module-proxy */ "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-loader/module-proxy.js");
-module.exports = createProxy("C:\\Users\\EAN108\\Desktop\\gstart\\multinational-startup-support-platform\\client\\node_modules\\@mui\\material\\Table\\index.js");
+module.exports = createProxy("C:\\test\\multinational-startup-support-platform\\client\\node_modules\\@mui\\material\\Table\\index.js");
 
 
 /***/ }),
@@ -2727,7 +2727,7 @@ module.exports = createProxy("C:\\Users\\EAN108\\Desktop\\gstart\\multinational-
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 /* __next_internal_client_entry_do_not_use__ default,textFieldClasses,* auto */ const { createProxy } = __webpack_require__(/*! next/dist/build/webpack/loaders/next-flight-loader/module-proxy */ "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-loader/module-proxy.js");
-module.exports = createProxy("C:\\Users\\EAN108\\Desktop\\gstart\\multinational-startup-support-platform\\client\\node_modules\\@mui\\material\\TextField\\index.js");
+module.exports = createProxy("C:\\test\\multinational-startup-support-platform\\client\\node_modules\\@mui\\material\\TextField\\index.js");
 
 
 /***/ }),
@@ -2739,7 +2739,7 @@ module.exports = createProxy("C:\\Users\\EAN108\\Desktop\\gstart\\multinational-
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 /* __next_internal_client_entry_do_not_use__ default,typographyClasses,* auto */ const { createProxy } = __webpack_require__(/*! next/dist/build/webpack/loaders/next-flight-loader/module-proxy */ "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-loader/module-proxy.js");
-module.exports = createProxy("C:\\Users\\EAN108\\Desktop\\gstart\\multinational-startup-support-platform\\client\\node_modules\\@mui\\material\\Typography\\index.js");
+module.exports = createProxy("C:\\test\\multinational-startup-support-platform\\client\\node_modules\\@mui\\material\\Typography\\index.js");
 
 
 /***/ })

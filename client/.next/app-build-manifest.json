@@ -11,17 +11,11 @@
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
-    "/posts/community/page": [
+    "/community/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/posts/community/page.css",
-      "static/chunks/app/posts/community/page.js"
-    ],
-    "/posts/[slug]/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/posts/[slug]/page.css",
-      "static/chunks/app/posts/[slug]/page.js"
+      "static/css/app/community/page.css",
+      "static/chunks/app/community/page.js"
     ],
     "/posts/community/write/page": [
       "static/chunks/webpack.js",
@@ -29,11 +23,27 @@
       "static/css/app/posts/community/write/page.css",
       "static/chunks/app/posts/community/write/page.js"
     ],
-    "/posts/space/page": [
+    "/community/write/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/posts/space/page.css",
-      "static/chunks/app/posts/space/page.js"
+      "static/css/app/community/write/page.css",
+      "static/chunks/app/community/write/page.js"
+    ],
+    "/business-notice/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/business-notice/page.js"
+    ],
+    "/space/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/space/page.css",
+      "static/chunks/app/space/page.js"
+    ],
+    "/card-news/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/card-news/page.js"
     ]
   }
 }

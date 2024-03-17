@@ -8,15 +8,16 @@ import Container from "@/app/_components/container";
 import Header from "@/app/_components/header";
 import { PostBody } from "@/app/_components/post-body";
 import { PostHeader } from "@/app/_components/post-header";
-import SpaceCard from "@/app/_components/space-card";
+import Board from "@/app/_components/list-board";
+import { Intro } from "../_components/intro";
 
-export default function Space() {
+export default function Community() {
   return (
     <main>
       <Container>
-        <Header />
-        <h1 style={{ fontSize: '30px', fontWeight: 'bold' }}>창업공간</h1>
-        <SpaceCard/>
+        <Intro />
+        <h1 style={{ fontSize: '30px', fontWeight: 'bold' }}>커뮤니티</h1>
+        <Board />
         <article className="mb-32">
         </article>
       </Container>
