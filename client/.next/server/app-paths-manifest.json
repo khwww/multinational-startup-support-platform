@@ -1,0 +1,9 @@
+{
+  "/page": "app/page.js",
+  "/community/page": "app/community/page.js",
+  "/posts/community/write/page": "app/posts/community/write/page.js",
+  "/community/write/page": "app/community/write/page.js",
+  "/business-notice/page": "app/business-notice/page.js",
+  "/space/page": "app/space/page.js",
+  "/card-news/page": "app/card-news/page.js"
+}

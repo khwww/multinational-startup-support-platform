@@ -34,8 +34,8 @@ export function Intro() {
           </li>
           <li className='mr-6'>
             <Link
-              as={`/startup-space`}
-              href='/startup-space'
+              as={`/space`}
+              href='/space'
               className='hover:underline'
             >
               창업공간
@@ -43,8 +43,8 @@ export function Intro() {
           </li>
           <li className='mr-6'>
             <Link
-              as={`/experience-share`}
-              href='/experience-share'
+              as={`/community`}
+              href='/community'
               className='hover:underline'
             >
               경험 공유
