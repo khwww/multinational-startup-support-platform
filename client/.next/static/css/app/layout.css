@@ -597,6 +597,9 @@ video {
     max-width: 1536px;
   }
 }
+.static {
+  position: static;
+}
 .mx-3 {
   margin-left: 0.75rem;
   margin-right: 0.75rem;
@@ -658,6 +661,9 @@ video {
 }
 .flex {
   display: flex;
+}
+.table {
+  display: table;
 }
 .grid {
   display: grid;

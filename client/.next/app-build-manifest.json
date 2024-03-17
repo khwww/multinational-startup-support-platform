@@ -17,6 +17,18 @@
       "static/css/app/posts/community/page.css",
       "static/chunks/app/posts/community/page.js"
     ],
+    "/posts/[slug]/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/posts/[slug]/page.css",
+      "static/chunks/app/posts/[slug]/page.js"
+    ],
+    "/posts/community/write/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/posts/community/write/page.css",
+      "static/chunks/app/posts/community/write/page.js"
+    ],
     "/posts/space/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",

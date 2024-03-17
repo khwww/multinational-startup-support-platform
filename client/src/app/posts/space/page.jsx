@@ -8,13 +8,15 @@ import Container from "@/app/_components/container";
 import Header from "@/app/_components/header";
 import { PostBody } from "@/app/_components/post-body";
 import { PostHeader } from "@/app/_components/post-header";
+import SpaceCard from "@/app/_components/space-card";
 
 export default function Space() {
   return (
     <main>
-      <Alert/>
       <Container>
         <Header />
+        <h1 style={{ fontSize: '30px', fontWeight: 'bold' }}>창업공간</h1>
+        <SpaceCard/>
         <article className="mb-32">
         </article>
       </Container>
