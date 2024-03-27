@@ -1,4 +1,5 @@
 import { CMS_NAME } from '@/lib/constants';
+import { Button } from 'antd';
 import Link from 'next/link';
 
 export function Intro() {
@@ -8,7 +9,7 @@ export function Intro() {
         G - Start Up
       </h1>
       <nav>
-        <ul className='flex'>
+        <ul className='flex' style={{ alignItems: 'center' }}>
           <li className='mr-6'>
             <Link as={`/`} href='/' className='hover:underline'>
               홈
@@ -33,11 +34,7 @@ export function Intro() {
             </Link>
           </li>
           <li className='mr-6'>
-            <Link
-              as={`/space`}
-              href='/space'
-              className='hover:underline'
-            >
+            <Link as={`/space`} href='/space' className='hover:underline'>
               창업공간
             </Link>
           </li>
@@ -50,6 +47,9 @@ export function Intro() {
               경험 공유
             </Link>
           </li>
+          <Link as={`/login`} href='/login' className='hover:underline'>
+            <Button type='primary'>로그인</Button>
+          </Link>
         </ul>
       </nav>
     </section>
