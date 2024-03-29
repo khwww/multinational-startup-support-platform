@@ -32,7 +32,6 @@ export default function WritePostPage() {
               multiline
               rows={10}
             />
-            {/* 글쓰기 버튼 */}
             <Button type="submit" color="primary">
               글쓰기
             </Button>
