@@ -5,6 +5,9 @@ import { Inter } from 'next/font/google';
 
 import './globals.css';
 import { AntdRegistry } from '@ant-design/nextjs-registry';
+import AuthProvider from '@/lib/auth/auth-provider';
+import { Session } from 'inspector';
+import SessionProvider from '@/lib/auth/Provider';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
@@ -58,7 +61,9 @@ export default function RootLayout({
 
       <body className={inter.className}>
         <div className='min-h-screen'>
-          <AntdRegistry>{children}</AntdRegistry>
+          <AuthProvider>
+            <AntdRegistry>{children}</AntdRegistry>
+          </AuthProvider>
         </div>
         <Footer />
       </body>

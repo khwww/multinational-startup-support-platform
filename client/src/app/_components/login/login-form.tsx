@@ -3,7 +3,9 @@
 import { Alert, Button, Form, Input } from 'antd';
 import { useForm } from 'antd/lib/form/Form';
 import { signIn } from 'next-auth/react';
-import { useSearchParams } from 'next/navigation';
+import Link from 'next/link';
+import { useRouter, useSearchParams } from 'next/navigation';
+import Router from 'next/router';
 import React, { useCallback, useState } from 'react';
 
 interface ILoginFormValue {
@@ -15,7 +17,7 @@ const LoginForm = () => {
   const [form] = useForm<ILoginFormValue>();
   const [isLoading, setIsLoading] = useState(false);
   const [showPasswordModal, setShowPasswordModal] = useState(false);
-
+  const router = useRouter();
   const handleFinish = useCallback(async (value: ILoginFormValue) => {
     setIsLoading(true);
 
@@ -27,6 +29,8 @@ const LoginForm = () => {
       });
     } catch (error) {
       setIsLoading(false);
+    } finally {
+      router.push('/');
     }
   }, []);
 
