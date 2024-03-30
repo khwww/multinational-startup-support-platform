@@ -1,3 +1,6 @@
 {
-  "/card-news/[slug]/page": "app/card-news/[slug]/page.js"
+  "/not-found": "app/not-found.js",
+  "/page": "app/page.js",
+  "/business-notice/page": "app/business-notice/page.js",
+  "/business-notice/[slug]/page": "app/business-notice/[slug]/page.js"
 }
