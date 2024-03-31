@@ -1,25 +1,20 @@
-import { Metadata } from "next";
-import { notFound } from "next/navigation";
-import { getAllPosts, getPostBySlug } from "@/lib/api";
-import { CMS_NAME } from "@/lib/constants";
-import markdownToHtml from "@/lib/markdownToHtml";
-import Alert from "@/app/_components/alert";
+'use client'
 import Container from "@/app/_components/container";
-import Header from "@/app/_components/header";
-import { PostBody } from "@/app/_components/post-body";
-import { PostHeader } from "@/app/_components/post-header";
 import SpaceCard from "@/app/_components/space-card";
 import { Intro } from "../_components/intro";
+import { Avatar, Card, Flex, Space  } from 'antd';
+import { useState } from "react";
 
-export default function Space() {
+export default function BSpace() {
+  const [cnt,setCnt] = useState(0);
   return (
     <main>
       <Container>
         <Intro />
-        <h1 style={{ fontSize: '30px', fontWeight: 'bold' }}>창업공간</h1>
+        <Space className='justify-between mb-3'>
+          <h1 style={{ fontSize: 20, fontWeight: 'bolder' }}>창업공간</h1>
+        </Space>
         <SpaceCard/>
-        <article className="mb-32">
-        </article>
       </Container>
     </main>
   );

@@ -1,18 +1,17 @@
 import Container from "@/app/_components/container";
-import Board from "@/app/_components/list-board";
 import { Intro } from "../_components/intro";
 import { Space } from 'antd';
+import NoticeList from "@/app/_components/notice-list";
 
-export default function Community() {
+export default function businessNotice() {
   return (
     <main>
       <Container>
         <Intro />
-        {/* <h1 style={{ fontSize: '30px', fontWeight: 'bold' }}>커뮤니티</h1> */}
         <Space className='justify-between mb-3'>
-          <h1 style={{ fontSize: 20, fontWeight: 'bolder' }}>커뮤니티</h1>
+          <h1 style={{ fontSize: 20, fontWeight: 'bolder' }}>사업공고 게시판</h1>
         </Space>
-        <Board />
+        <NoticeList />
       </Container>
     </main>
   );
