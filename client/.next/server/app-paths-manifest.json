@@ -1,7 +1,8 @@
 {
-  "/community/page": "app/community/page.js",
-  "/page": "app/page.js",
+  "/not-found": "app/not-found.js",
   "/community/write/page": "app/community/write/page.js",
-  "/business-notice/page": "app/business-notice/page.js",
-  "/api/auth/[...nextauth]/route": "app/api/auth/[...nextauth]/route.js"
+  "/login/page": "app/login/page.js",
+  "/community/page": "app/community/page.js",
+  "/api/auth/[...nextauth]/route": "app/api/auth/[...nextauth]/route.js",
+  "/page": "app/page.js"
 }

@@ -1,3 +1,4 @@
+import axios from "axios";
 import NextAuth, { Session } from "next-auth";
 import CredentialsProvider, { CredentialsConfig } from "next-auth/providers/credentials";
 import GithubProvider from "next-auth/providers/github";
@@ -12,16 +13,17 @@ const credentialsProviderOption: CredentialsConfig<{}> = {
     password: { label: "Password", type: "password" },
   },
   async authorize(credentials: Record<string, unknown> | undefined) {
-    if ((credentials && credentials.username === "khw4420@naver.com" && credentials.password === "dc")) {
-      return {
-        id: "1",
+    const response = await axios.post("http://43.202.133.160:8000/api/auth/login", { email : credentials?.username, password : credentials?.password});
+   if (response.data.accessToken){
+    return {
+        id: response.data.accessToken as string,
         login: "admin",
         name: "관리자",
         email: "",
         image: "",
       };
-    }
-
+   }
+   
     return null;
   },
 };

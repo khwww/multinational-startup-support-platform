@@ -23,14 +23,18 @@ const LoginForm = () => {
 
     try {
       console.log(value);
-      await signIn('login-credentials', {
+      const response = await signIn('login-credentials', {
         username: value.username,
         password: value.password,
       });
-    } catch (error) {
-      setIsLoading(false);
-    } finally {
+      console.log(response);
+      alert('로그인에 성공했습니다.');
       router.push('/');
+    } catch (error) {
+      console.error(error);
+      alert('로그인에 실패했습니다. 아이디 또는 비밀번호를 확인해주세요.');
+    } finally {
+      setIsLoading(false);
     }
   }, []);
 

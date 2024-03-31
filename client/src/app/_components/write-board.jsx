@@ -5,26 +5,42 @@ import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
+import axios from 'axios';
+import { useSession } from 'next-auth/react';
+import { useRouter } from 'next/navigation';
 
 export default function WritePostPage() {
   const [title, setTitle] = React.useState('');
   const [content, setContent] = React.useState('');
+  const { data: session, status } = useSession();
+  const [loading, setLoading] = React.useState(false);
+  const router = useRouter();
 
-  useEffect(() => {
-    // 글쓰기 버튼 클릭 시
-    const writePost = async () => {
+  const writePost = async () => {
+    console.log(title, content, session.user.id);
+    setLoading(true);
+    try {
       const response = await axios.post(
         'http://43.202.133.160:8000/api/question/',
         {
           title: title,
           content: content,
+        },
+        {
+          headers: {
+            // 헤더에 Authorization 추가
+            authorization: `Bearer ${session.user.id}`,
+          },
         }
       );
-      console.log(response.data);
-    };
-    writePost();
-  }, [title, content]);
-
+      alert('글이 성공적으로 작성되었습니다.');
+    } catch (error) {
+      alert('글쓰기에 실패했습니다.');
+    } finally {
+      setLoading(false);
+      router.push('/community');
+    }
+  };
   return (
     <Grid container justifyContent='center' spacing={2}>
       <Grid item xs={12} md={8}>
@@ -49,7 +65,13 @@ export default function WritePostPage() {
             onChange={(e) => setContent(e.target.value)}
           />
           {/* 글쓰기 버튼 */}
-          <Button type='submit' color='primary'>
+          <Button
+            type='submit'
+            onClick={() => {
+              writePost();
+            }}
+            color='primary'
+          >
             글쓰기
           </Button>
         </Paper>
