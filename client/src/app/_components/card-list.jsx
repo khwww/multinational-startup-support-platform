@@ -12,7 +12,12 @@ const NewsComponent = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://43.202.133.160:8000/api/card-news/?pageSize=16&pageNumber=${currentPage}`);
+        const response = await axios.get(`http://3.34.226.107:8080/api/card-news/`, {
+          params : {
+            pageSize : 16,
+            pageNumber : currentPage
+          }
+        });
         setNewsData(response.data.data);
         setTotalPages(response.data.page_count);
       } catch (error) {

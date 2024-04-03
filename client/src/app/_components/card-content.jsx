@@ -11,7 +11,7 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import FavoriteIcon from '@mui/icons-material/Favorite';
-
+import { getSession } from 'next-auth/react';
 const StyledPaper = styled(Paper)(({ theme }) => ({
   padding: theme.spacing(2),
   marginBottom: theme.spacing(2),
@@ -29,12 +29,13 @@ const CardContent = () => {
 
   const [cardData, setCardData] = useState(null);
   const [liked, setLiked] = useState(false); // 좋아요 상태를 관리하는 상태 변수
-  const token = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjI5LCJ1c2VybmFtZSI6Imh5dW53b28iLCJlbWFpbCI6ImtodzQ0MjBAbmF2ZXIuY29tIiwicmVnaW9uIjoiYXNkIiwidGVsIjoiYXNkIiwiaWF0IjoxNzExNzEyNDA0LCJleHAiOjE3MTE3OTg4MDR9.Ua8N5SVi-KTGR28Jm5M9nqtYqvjytOOqJ85iVUc6TfA";
+
 
   useEffect(() => {
     const fetchCardData = async () => {
       try {
-        const response = await axios.get(`http://43.202.133.160:8000/api/card-news/${cardId}`, {
+        const token = `Bearer ${(await getSession()).user.id}`
+        const response = await axios.get(`http://3.34.226.107:8080/api/card-news/${cardId}`, {
           headers: {
             Authorization: token
           }
@@ -58,16 +59,18 @@ const CardContent = () => {
   // 좋아요 클릭 시 처리하는 함수
   const handleLikeClick = async () => {
     try {
+      
+        const token = `Bearer ${(await getSession()).user.id}`
       if (!liked) {
         // 좋아요 추가
-        await axios.post(`http://43.202.133.160:8000/api/card-news/${cardId}/like`, null, {
+        await axios.post(`http://3.34.226.107:8080/api/card-news/${cardId}/like`, null, {
           headers: {
             Authorization: token
           }
         });
       } else {
         // 좋아요 취소
-        await axios.delete(`http://43.202.133.160:8000/api/card-news/${cardId}/like`, {
+        await axios.delete(`http://3.34.226.107:8080/api/card-news/${cardId}/like`, {
           headers: {
             Authorization: token
           }

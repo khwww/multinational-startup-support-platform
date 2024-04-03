@@ -8,12 +8,17 @@ import { sign } from 'crypto';
 import { signOut } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import Spinner from './shared/spinner';
+import { Pointer } from 'lucide-react';
+
 export function Intro() {
   const { data: session, status } = useSession();
-
+  const routeHomePageHandler = (e:any)=>{
+    location.href = "/"
+  }
   return (
     <section className='flex-col md:flex-row flex items-center md:justify-between mt-16 mb-16 md:mb-12'>
-      <h1 className='text-5xl md:text-8xl font-bold tracking-tighter leading-tight md:pr-8'>
+      
+      <h1 style={{cursor:'pointer'}} className='text-5xl md:text-8xl font-bold tracking-tighter leading-tight md:pr-8' onClick={(e:any)=>routeHomePageHandler(e)}>
         G - Start Up
       </h1>
       <nav>
@@ -65,9 +70,14 @@ export function Intro() {
               로그아웃
             </Button>
           ) : (
-            <Link as={`/login`} href='/login' className='hover:underline'>
-              <Button type='primary'>로그인</Button>
-            </Link>
+            <>
+              <Link as={`/login`} href='/login' className='hover:underline'>
+                <Button type='primary'>로그인</Button>
+              </Link>
+              <Link as={`/join`} href='/signup' className='hover:underline'>
+                <Button type='primary' style={{ marginLeft: '8px' }}>회원가입</Button>
+              </Link>
+            </>
           )}
         </ul>
       </nav>

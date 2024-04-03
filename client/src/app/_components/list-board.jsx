@@ -21,7 +21,7 @@ export default function CommunityBoard() {
 
   const fetchData = async () => {
     const response = await axios.get(
-      'http://43.202.133.160:8000/api/question/'
+      'http://3.34.226.107:8080/api/question/'
     );
     console.log(response.data);
     setRows(response.data.data);

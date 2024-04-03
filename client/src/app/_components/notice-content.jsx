@@ -7,6 +7,7 @@ import { usePathname } from 'next/navigation';
 import { blue } from '@mui/material/colors';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import FavoriteIcon from '@mui/icons-material/Favorite';
+import { getSession } from 'next-auth/react';
 
 const StyledPaper = styled(Paper)(({ theme }) => ({
   padding: theme.spacing(2),
@@ -29,12 +30,13 @@ const BusinessNoticePage = () => {
   const articleId = pathname.substring(lastSlashIndex + 1);
   const [articleData, setArticleData] = useState(null);
   const [liked, setLiked] = useState(false);
-  const token = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjI5LCJ1c2VybmFtZSI6Imh5dW53b28iLCJlbWFpbCI6ImtodzQ0MjBAbmF2ZXIuY29tIiwicmVnaW9uIjoiYXNkIiwidGVsIjoiYXNkIiwiaWF0IjoxNzExNzEyNDA0LCJleHAiOjE3MTE3OTg4MDR9.Ua8N5SVi-KTGR28Jm5M9nqtYqvjytOOqJ85iVUc6TfA";
+  // const token = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjEsInVzZXJuYW1lIjoiaHl1bl93b28iLCJlbWFpbCI6ImtodzQ0MjBAbmF2ZXIuY29tIiwiaWF0IjoxNzEyMDU2MjY0LCJleHAiOjE3MTIwNTgwNjR9.sHrh9BnkkRzWUlytzjcUW6Ifsx8WVmh5Li3zuLW1pUE";
 
   useEffect(() => {
     const fetchArticleData = async () => {
       try {
-        const response = await axios.get(`http://43.202.133.160:8000/api/article/${articleId}`, {
+        const token = `Bearer ${(await getSession()).user.id}`
+        const response = await axios.get(`http://3.34.226.107:8080/api/article/${articleId}`, {
           headers: {
             Authorization: token
           }
@@ -57,14 +59,15 @@ const BusinessNoticePage = () => {
 
   const handleLikeClick = async () => {
     try {
+      const token = `Bearer ${(await getSession()).user.id}`
       if (!liked) {
-        await axios.post(`http://43.202.133.160:8000/api/article/${articleId}/like`, null, {
+        await axios.post(`http://3.34.226.107:8080/api/article/${articleId}/like`, null, {
           headers: {
             Authorization: token
           }
         });
       } else {
-        await axios.delete(`http://43.202.133.160:8000/api/article/${articleId}/like`, {
+        await axios.delete(`http://3.34.226.107:8080/api/article/${articleId}/like`, {
           headers: {
             Authorization: token
           }

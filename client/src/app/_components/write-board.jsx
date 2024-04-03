@@ -21,7 +21,7 @@ export default function WritePostPage() {
     setLoading(true);
     try {
       const response = await axios.post(
-        'http://43.202.133.160:8000/api/question/',
+        'http://3.34.226.107:8080/api/question/',
         {
           title: title,
           content: content,
