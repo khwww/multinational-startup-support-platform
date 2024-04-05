@@ -1,7 +1,19 @@
-'use client'
+'use client';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { Typography, Paper, Button, Divider, Box, IconButton, Table, TableBody, TableCell, TableContainer, TableRow } from '@mui/material';
+import {
+  Typography,
+  Paper,
+  Button,
+  Divider,
+  Box,
+  IconButton,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableRow,
+} from '@mui/material';
 import { styled } from '@mui/system';
 import { usePathname } from 'next/navigation';
 import { blue } from '@mui/material/colors';
@@ -29,23 +41,27 @@ const BusinessNoticePage = () => {
   const articleId = pathname.substring(lastSlashIndex + 1);
   const [articleData, setArticleData] = useState(null);
   const [liked, setLiked] = useState(false);
-  const token = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjI5LCJ1c2VybmFtZSI6Imh5dW53b28iLCJlbWFpbCI6ImtodzQ0MjBAbmF2ZXIuY29tIiwicmVnaW9uIjoiYXNkIiwidGVsIjoiYXNkIiwiaWF0IjoxNzExNzEyNDA0LCJleHAiOjE3MTE3OTg4MDR9.Ua8N5SVi-KTGR28Jm5M9nqtYqvjytOOqJ85iVUc6TfA";
+  const token =
+    'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjI5LCJ1c2VybmFtZSI6Imh5dW53b28iLCJlbWFpbCI6ImtodzQ0MjBAbmF2ZXIuY29tIiwicmVnaW9uIjoiYXNkIiwidGVsIjoiYXNkIiwiaWF0IjoxNzExNzEyNDA0LCJleHAiOjE3MTE3OTg4MDR9.Ua8N5SVi-KTGR28Jm5M9nqtYqvjytOOqJ85iVUc6TfA';
 
   useEffect(() => {
     const fetchArticleData = async () => {
       try {
-        const response = await axios.get(`http://43.202.133.160:8000/api/article/${articleId}`, {
-          headers: {
-            Authorization: token
+        const response = await axios.get(
+          `http://3.34.226.107:8080/api/article/${articleId}`,
+          {
+            headers: {
+              Authorization: token,
+            },
           }
-        });
+        );
         setArticleData(response.data);
-        setLiked(response.data.user_likes === "1");
+        setLiked(response.data.user_likes === '1');
       } catch (error) {
         console.error('Error fetching article data:', error);
       }
     };
-  
+
     if (articleId) {
       fetchArticleData();
     }
@@ -58,17 +74,24 @@ const BusinessNoticePage = () => {
   const handleLikeClick = async () => {
     try {
       if (!liked) {
-        await axios.post(`http://43.202.133.160:8000/api/article/${articleId}/like`, null, {
-          headers: {
-            Authorization: token
+        await axios.post(
+          `http://3.34.226.107:8080/api/article/${articleId}/like`,
+          null,
+          {
+            headers: {
+              Authorization: token,
+            },
           }
-        });
+        );
       } else {
-        await axios.delete(`http://43.202.133.160:8000/api/article/${articleId}/like`, {
-          headers: {
-            Authorization: token
+        await axios.delete(
+          `http://3.34.226.107:8080/api/article/${articleId}/like`,
+          {
+            headers: {
+              Authorization: token,
+            },
           }
-        });
+        );
       }
       setLiked(!liked);
     } catch (error) {
@@ -85,22 +108,28 @@ const BusinessNoticePage = () => {
     <div>
       {articleData && (
         <div>
-          <Typography variant="h4">{articleData.a_title}</Typography>
+          <Typography variant='h4'>{articleData.a_title}</Typography>
           <Divider sx={{ marginY: 1 }} />
           <StyledPaper>
             {articleData.a_content.info_box && (
               <>
-                <Typography variant="h5" gutterBottom><strong>개요</strong></Typography>
+                <Typography variant='h5' gutterBottom>
+                  <strong>개요</strong>
+                </Typography>
                 <Divider sx={{ marginY: 1 }} />
                 <TableContainer>
                   <Table>
                     <TableBody>
-                      {Object.entries(articleData.a_content.info_box).map(([key, value], index) => (
-                        <TableRow key={index}>
-                          <TableCell><strong>{key}: </strong></TableCell>
-                          <TableCell>{value}</TableCell>
-                        </TableRow>
-                      ))}
+                      {Object.entries(articleData.a_content.info_box).map(
+                        ([key, value], index) => (
+                          <TableRow key={index}>
+                            <TableCell>
+                              <strong>{key}: </strong>
+                            </TableCell>
+                            <TableCell>{value}</TableCell>
+                          </TableRow>
+                        )
+                      )}
                     </TableBody>
                   </Table>
                 </TableContainer>
@@ -112,30 +141,51 @@ const BusinessNoticePage = () => {
             </Box>
           </StyledPaper>
           <StyledPaper>
-            <Typography variant="h5" sx={{ fontWeight: 'bold', marginBottom: 1 }}>첨부파일</Typography>
+            <Typography
+              variant='h5'
+              sx={{ fontWeight: 'bold', marginBottom: 1 }}
+            >
+              첨부파일
+            </Typography>
             <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-              {articleData.a_content.attachment_list.map((attachment, index) => (
-                   <Box key={index} sx={{ display: 'flex', justifyContent: 'center', marginTop: 1 }}>
-                  <StyledOutlinedButton
-                    onClick={() => handleAttachmentButtonClick(attachment.url)}
-                    color="primary"
-                    variant="contained" 
-                    disableElevation 
-                    size="small" 
-                    style={{ borderRadius: '5px' }} 
+              {articleData.a_content.attachment_list.map(
+                (attachment, index) => (
+                  <Box
+                    key={index}
+                    sx={{
+                      display: 'flex',
+                      justifyContent: 'center',
+                      marginTop: 1,
+                    }}
                   >
-                    {attachment.name}
-                  </StyledOutlinedButton>
-                </Box>
-              ))}
+                    <StyledOutlinedButton
+                      onClick={() =>
+                        handleAttachmentButtonClick(attachment.url)
+                      }
+                      color='primary'
+                      variant='contained'
+                      disableElevation
+                      size='small'
+                      style={{ borderRadius: '5px' }}
+                    >
+                      {attachment.name}
+                    </StyledOutlinedButton>
+                  </Box>
+                )
+              )}
             </Box>
           </StyledPaper>
           <StyledPaper>
             <IconButton onClick={handleLikeClick}>
-              {liked ? <FavoriteIcon color="error" style={{ fontSize: "5rem" }} /> 
-              : <FavoriteBorderIcon style={{ fontSize: "5rem" }} />}
+              {liked ? (
+                <FavoriteIcon color='error' style={{ fontSize: '5rem' }} />
+              ) : (
+                <FavoriteBorderIcon style={{ fontSize: '5rem' }} />
+              )}
             </IconButton>
-            <Typography variant="body2" sx={{ fontWeight: 'bold' }}>좋아요</Typography>
+            <Typography variant='body2' sx={{ fontWeight: 'bold' }}>
+              좋아요
+            </Typography>
           </StyledPaper>
         </div>
       )}
