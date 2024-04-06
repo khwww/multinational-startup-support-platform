@@ -19,7 +19,7 @@ const NewsComponent = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://3.34.226.107:8000/api/card-news/`, {
+        const response = await axios.get(`https://api.g-start-up.com/api/card-news/`, {
           params : {
             pageSize : 16,
             pageNumber : currentPage

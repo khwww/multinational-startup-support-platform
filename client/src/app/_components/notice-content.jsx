@@ -35,7 +35,7 @@ const BusinessNoticePage = () => {
     const fetchArticleData = async () => {
       try {
         const token = `Bearer ${(await getSession()).user.id}`
-        const response = await axios.get(`http://3.34.226.107:8000/api/article/${articleId}`, {
+        const response = await axios.get(`https://api.g-start-up.com/api/article/${articleId}`, {
           headers: {
             Authorization: token
           }
@@ -60,13 +60,13 @@ const BusinessNoticePage = () => {
     try {
       const token = `Bearer ${(await getSession()).user.id}`
       if (!liked) {
-        await axios.post(`http://3.34.226.107:8000/api/article/${articleId}/like`, null, {
+        await axios.post(`https://api.g-start-up.com/api/article/${articleId}/like`, null, {
           headers: {
             Authorization: token
           }
         });
       } else {
-        await axios.delete(`http://3.34.226.107:8000/api/article/${articleId}/like`, {
+        await axios.delete(`https://api.g-start-up.com/api/article/${articleId}/like`, {
           headers: {
             Authorization: token
           }

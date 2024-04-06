@@ -32,7 +32,7 @@ export default function CommunityBoard() {
 
   const fetchData = async () => {
     const response = await axios.get(
-      'http://3.34.226.107:8000/api/question/'
+      'https://api.g-start-up.com/api/question/'
     );
     console.log(response.data);
     setRows(response.data.data);

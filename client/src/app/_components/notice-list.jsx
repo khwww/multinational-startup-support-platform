@@ -22,7 +22,7 @@ const App = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://3.34.226.107:8000/api/article/?pageNumber=${currentPage}`);
+        const response = await axios.get(`https://api.g-start-up.com/api/article/?pageNumber=${currentPage}`);
         setData(response.data.data);
         setPageCount(response.data.page_count);
       } catch (error) {
