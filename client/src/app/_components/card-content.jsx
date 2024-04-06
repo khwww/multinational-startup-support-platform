@@ -1,4 +1,4 @@
-'use client';
+'use client'
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Typography, Paper, Divider, IconButton } from '@mui/material';
@@ -18,7 +18,7 @@ const StyledPaper = styled(Paper)(({ theme }) => ({
 }));
 
 const LargeIconButton = styled(IconButton)(({ theme }) => ({
-  width: '60px',
+  width: '60px', 
   height: '60px', // 좋아요 버튼의 크기조정
 }));
 
@@ -29,45 +29,32 @@ const CardContent = () => {
 
   const [cardData, setCardData] = useState(null);
   const [liked, setLiked] = useState(false); // 좋아요 상태를 관리하는 상태 변수
-<<<<<<< HEAD
 
-=======
-  const token =
-    'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjI5LCJ1c2VybmFtZSI6Imh5dW53b28iLCJlbWFpbCI6ImtodzQ0MjBAbmF2ZXIuY29tIiwicmVnaW9uIjoiYXNkIiwidGVsIjoiYXNkIiwiaWF0IjoxNzExNzEyNDA0LCJleHAiOjE3MTE3OTg4MDR9.Ua8N5SVi-KTGR28Jm5M9nqtYqvjytOOqJ85iVUc6TfA';
->>>>>>> main
 
   useEffect(() => {
     const fetchCardData = async () => {
       try {
-<<<<<<< HEAD
         const token = `Bearer ${(await getSession()).user.id}`
         const response = await axios.get(`http://3.34.226.107:8000/api/card-news/${cardId}`, {
           headers: {
             Authorization: token
-=======
-        const response = await axios.get(
-          `http://3.34.226.107:8000/api/card-news/${cardId}`,
-          {
-            headers: {
-              Authorization: token,
-            },
->>>>>>> main
           }
-        );
+        });
         setCardData(response.data);
         // setLikeCount(response.data.like_count);
         // user_likes 값이 "1"이면 liked를 true로 설정하여 꽉 찬 하트로
         // 아니면 false로 설정하여 빈 하트로 표시
-        setLiked(response.data.user_likes === '1');
+        setLiked(response.data.user_likes === "1");
       } catch (error) {
         console.error('Error fetching card data:', error);
       }
     };
-
+  
     if (cardId) {
       fetchCardData();
     }
   }, [cardId]);
+
 
   // 좋아요 클릭 시 처리하는 함수
   const handleLikeClick = async () => {
@@ -80,23 +67,14 @@ const CardContent = () => {
           headers: {
             Authorization: token
           }
-        );
+        });
       } else {
         // 좋아요 취소
-<<<<<<< HEAD
         await axios.delete(`http://3.34.226.107:8000/api/card-news/${cardId}/like`, {
           headers: {
             Authorization: token
-=======
-        await axios.delete(
-          `http://3.34.226.107:8000/api/card-news/${cardId}/like`,
-          {
-            headers: {
-              Authorization: token,
-            },
->>>>>>> main
           }
-        );
+        });
       }
       // 좋아요 상태 업데이트
       setLiked(!liked);
@@ -112,78 +90,34 @@ const CardContent = () => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    prevArrow: (
-      <ArrowBackIosIcon
-        sx={{
-          color: 'black',
-          marginRight: '80px',
-          cursor: 'pointer',
-          '&:hover': { color: 'gray' },
-        }}
-      />
-    ),
-    nextArrow: (
-      <ArrowForwardIosIcon
-        sx={{
-          color: 'black',
-          marginLeft: '80px',
-          cursor: 'pointer',
-          '&:hover': { color: 'gray' },
-        }}
-      />
-    ),
+    prevArrow: <ArrowBackIosIcon sx={{ color: 'black', marginRight: '80px', cursor: 'pointer', '&:hover': { color: 'gray' } }} />,
+    nextArrow: <ArrowForwardIosIcon sx={{ color: 'black', marginLeft: '80px', cursor: 'pointer', '&:hover': { color: 'gray' } }} />
   };
 
   return (
     <div>
       {cardData && (
         <div>
-          <Typography variant='h4'>{cardData.title}</Typography>
+          <Typography variant="h4">{cardData.title}</Typography>
           <Divider sx={{ marginY: 2 }} />
-          <Slider
-            {...settings}
-            className='slick-slider'
-            style={{ width: '80%', margin: '0 auto' }}
-          >
+          <Slider {...settings} className="slick-slider"  style={{ width: '80%', margin: '0 auto' }}>
             {cardData.content.images.map((image, index) => (
-              <div
-                key={index}
-                className='slick-slide'
-                style={{ textAlign: 'center' }}
-              >
-                <img
-                  src={`https://www.k-startup.go.kr${image}`}
-                  alt={`Image ${index + 1}`}
-                  style={{
-                    maxWidth: '800px',
-                    maxHeight: '800px',
-                    margin: '0 auto',
-                  }}
-                />
+              <div key={index} className="slick-slide" style={{ textAlign: 'center' }}>
+                <img src={`https://www.k-startup.go.kr${image}`} alt={`Image ${index + 1}`} style={{ maxWidth: '800px', maxHeight: '800px', margin: '0 auto' }} />
               </div>
             ))}
           </Slider>
           <StyledPaper>
-            <Typography
-              variant='body1'
-              dangerouslySetInnerHTML={{ __html: cardData.content.notice }}
-            />
+            <Typography variant="body1" dangerouslySetInnerHTML={{ __html: cardData.content.notice }} />
             {/* 좋아요 표시 */}
             <div style={{ textAlign: 'center', marginTop: '70px' }}>
-              <IconButton onClick={handleLikeClick}>
-                {liked ? (
-                  <FavoriteIcon color='error' style={{ fontSize: '5rem' }} />
-                ) : (
-                  <FavoriteBorderIcon style={{ fontSize: '5rem' }} />
-                )}
-              </IconButton>
+            <IconButton onClick={handleLikeClick}>
+              {liked ? <FavoriteIcon color="error" style={{ fontSize: "5rem" }} /> 
+              : <FavoriteBorderIcon style={{ fontSize: "5rem" }} />}
+            </IconButton>
             </div>
-            <Typography
-              variant='body2'
-              style={{ textAlign: 'center', marginTop: '10px' }}
-            >
-              좋아요
-            </Typography>
+            <Typography variant="body2" style={{ textAlign: 'center', marginTop: '10px' }}>
+              좋아요</Typography>
           </StyledPaper>
         </div>
       )}
