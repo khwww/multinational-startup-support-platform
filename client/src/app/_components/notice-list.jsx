@@ -1,7 +1,17 @@
-'use client'
+'use client';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Button, Chip } from '@mui/material';
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+  Paper,
+  Button,
+  Chip,
+} from '@mui/material';
 import Link from 'next/link';
 
 const App = () => {
@@ -31,7 +41,10 @@ const App = () => {
     return data.map((item) => (
       <TableRow key={item.a_id}>
         <TableCell>
-          <Link href={`/business-notice/${item.a_id}`} className='hover:underline'>
+          <Link
+            href={`/business-notice/${item.a_id}`}
+            className='hover:underline'
+          >
             {item.a_title}
           </Link>
         </TableCell>
@@ -39,7 +52,10 @@ const App = () => {
         <TableCell>{new Date(item.date_end).toLocaleDateString()}</TableCell>
         <TableCell>{item.organization}</TableCell>
         <TableCell>
-          <Chip label={item.tag} style={{ backgroundColor: getTagColor(item.tag), color: '#fff' }} />
+          <Chip
+            label={item.tag}
+            style={{ backgroundColor: getTagColor(item.tag), color: '#fff' }}
+          />
         </TableCell>
         <TableCell>{item.hit_count}</TableCell>
         <TableCell>{item.like_count}</TableCell>
@@ -87,15 +103,15 @@ const App = () => {
               <TableCell>좋아요 수</TableCell>
             </TableRow>
           </TableHead>
-          <TableBody>
-            {getPageData()}
-          </TableBody>
+          <TableBody>{getPageData()}</TableBody>
         </Table>
       </TableContainer>
-      <div style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
+      <div
+        style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}
+      >
         {[...Array(pageCount)].map((_, index) => (
           <Button key={index} onClick={() => handlePageChange(index + 1)}>
-             {index + 1}
+            {index + 1}
           </Button>
         ))}
       </div>

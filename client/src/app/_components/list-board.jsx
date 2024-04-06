@@ -1,19 +1,30 @@
 'use client';
 import * as React from 'react';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
-import Button from '@mui/material/Button';
-import AddIcon from '@mui/icons-material/Add';
-import Link from 'next/link';
-import TableSortLabel from '@mui/material/TableSortLabel';
-import axios from 'axios';
-import { Spin } from 'antd';
 
+import Link from 'next/link';
+
+import axios from 'axios';
+import { EditOutlined } from '@ant-design/icons';
+import { Spin, Button, Table } from 'antd';
+function convertToKST(dateString) {
+  // ISO 8601 형식의 날짜 문자열을 Date 객체로 변환
+  const date = new Date(dateString);
+
+  // 한국 시간대로 변환하기 위한 옵션
+  const options = {
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+    timeZone: 'Asia/Seoul', // KST
+    hour12: false, // 24시간 형식
+  };
+
+  // Intl.DateTimeFormat을 사용하여 한국 시간대로 날짜와 시간 포맷
+  return new Intl.DateTimeFormat('ko-KR', options).format(date);
+}
 export default function CommunityBoard() {
   React.useEffect(() => {
     fetchData();
@@ -30,48 +41,51 @@ export default function CommunityBoard() {
   if (!rows) {
     return <Spin />;
   }
+  const columns = [
+    {
+      title: '번호',
+      dataIndex: 'qid',
+    },
+    {
+      title: '제목',
+      dataIndex: 'title',
+      render: (text, record) => (
+        <Link href={`/community/${record.qid}`}>{text}</Link>
+      ),
+    },
+    {
+      title: '작성자',
+      dataIndex: 'author',
+    },
+
+    {
+      title: '조회수',
+      dataIndex: 'hit_count',
+    },
+    {
+      title: '좋아요 수',
+      dataIndex: 'like_count',
+    },
+    {
+      title: '작성일',
+      dataIndex: 'created_date',
+      render: (text) => convertToKST(text),
+    },
+  ];
   return (
     <div>
-      <TableContainer component={Paper}>
-        <Table sx={{ minWidth: 650 }} aria-label='simple table'>
-          <TableHead>
-            <TableRow>
-              <TableCell align='left'>번호</TableCell>
-              <TableCell align='left'>글제목</TableCell>
-              <TableCell align='right'>작성자</TableCell>
-              <TableCell align='right'>날짜</TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {rows.map((row) => (
-              <TableRow
-                key={row.qid}
-                sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-              >
-                <TableCell component='th' scope='row'>
-                  {row.qid}
-                </TableCell>
-                <TableCell>{row.title}</TableCell>
-                <TableCell align='right'>{row.content}</TableCell>
-                <TableCell align='right'>{row.created_date}</TableCell>
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </TableContainer>
       <div
-        style={{ textAlign: 'right', marginRight: '1rem', marginTop: '1rem' }}
+        style={{
+          textAlign: 'right',
+          marginRight: '1rem',
+          marginBottom: '1rem',
+        }}
       >
         <Link href='/community/write'>
-          <Button
-            color='primary'
-            startIcon={<AddIcon />}
-            style={{ marginBottom: '1rem' }}
-          >
-            글쓰기
-          </Button>
+          <Button icon={<EditOutlined />}>글쓰기</Button>
         </Link>
       </div>
+      <Table columns={columns} dataSource={rows} rowKey={'qid'} />
     </div>
   );
 }

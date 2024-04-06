@@ -21,11 +21,7 @@ export default function WritePostPage() {
     setLoading(true);
     try {
       const response = await axios.post(
-        'http://3.34.226.107:8000/api/question/',
-        {
-          title: title,
-          content: content,
-        },
+        `http://3.34.226.107:8000/api/question/${params.qid}`,
         {
           headers: {
             // 헤더에 Authorization 추가
@@ -33,6 +29,7 @@ export default function WritePostPage() {
           },
         }
       );
+      console.log(response.data);
       alert('글이 성공적으로 작성되었습니다.');
     } catch (error) {
       alert('글쓰기에 실패했습니다.');
