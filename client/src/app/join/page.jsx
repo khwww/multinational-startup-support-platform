@@ -9,7 +9,7 @@ import axios from 'axios';
 const JoinForm = () => {
   const handleFormSubmit = async (formData) => {
     try {
-      await axios.post('http://3.34.226.107:8080/api/user', formData);
+      await axios.post('http://3.34.226.107:8000/api/user', formData);
       console.log('회원가입이 성공적으로 완료되었습니다.');
       window.location.href = '/';
       alert('회원가입 되었습니다. 가입하신 계정으로 로그인해주세요.');

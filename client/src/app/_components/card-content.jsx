@@ -35,7 +35,7 @@ const CardContent = () => {
     const fetchCardData = async () => {
       try {
         const token = `Bearer ${(await getSession()).user.id}`
-        const response = await axios.get(`http://3.34.226.107:8080/api/card-news/${cardId}`, {
+        const response = await axios.get(`http://3.34.226.107:8000/api/card-news/${cardId}`, {
           headers: {
             Authorization: token
           }
@@ -63,14 +63,14 @@ const CardContent = () => {
         const token = `Bearer ${(await getSession()).user.id}`
       if (!liked) {
         // 좋아요 추가
-        await axios.post(`http://3.34.226.107:8080/api/card-news/${cardId}/like`, null, {
+        await axios.post(`http://3.34.226.107:8000/api/card-news/${cardId}/like`, null, {
           headers: {
             Authorization: token
           }
         });
       } else {
         // 좋아요 취소
-        await axios.delete(`http://3.34.226.107:8080/api/card-news/${cardId}/like`, {
+        await axios.delete(`http://3.34.226.107:8000/api/card-news/${cardId}/like`, {
           headers: {
             Authorization: token
           }
