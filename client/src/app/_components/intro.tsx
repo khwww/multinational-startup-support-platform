@@ -74,7 +74,7 @@ export function Intro() {
               <Link as={`/login`} href='/login' className='hover:underline'>
                 <Button type='primary'>로그인</Button>
               </Link>
-              <Link as={`/join`} href='/signup' className='hover:underline'>
+              <Link as={`/join`} href='/join' className='hover:underline'>
                 <Button type='primary' style={{ marginLeft: '8px' }}>회원가입</Button>
               </Link>
             </>
