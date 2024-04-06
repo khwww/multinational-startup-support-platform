@@ -48,7 +48,7 @@ const BusinessNoticePage = () => {
     const fetchArticleData = async () => {
       try {
         const response = await axios.get(
-          `http://3.34.226.107:8080/api/article/${articleId}`,
+          `http://3.34.226.107:8000/api/article/${articleId}`,
           {
             headers: {
               Authorization: token,
@@ -75,7 +75,7 @@ const BusinessNoticePage = () => {
     try {
       if (!liked) {
         await axios.post(
-          `http://3.34.226.107:8080/api/article/${articleId}/like`,
+          `http://3.34.226.107:8000/api/article/${articleId}/like`,
           null,
           {
             headers: {
@@ -85,7 +85,7 @@ const BusinessNoticePage = () => {
         );
       } else {
         await axios.delete(
-          `http://3.34.226.107:8080/api/article/${articleId}/like`,
+          `http://3.34.226.107:8000/api/article/${articleId}/like`,
           {
             headers: {
               Authorization: token,

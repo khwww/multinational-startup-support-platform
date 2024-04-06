@@ -36,7 +36,7 @@ const CardContent = () => {
     const fetchCardData = async () => {
       try {
         const response = await axios.get(
-          `http://3.34.226.107:8080/api/card-news/${cardId}`,
+          `http://3.34.226.107:8000/api/card-news/${cardId}`,
           {
             headers: {
               Authorization: token,
@@ -64,7 +64,7 @@ const CardContent = () => {
       if (!liked) {
         // 좋아요 추가
         await axios.post(
-          `http://3.34.226.107:8080/api/card-news/${cardId}/like`,
+          `http://3.34.226.107:8000/api/card-news/${cardId}/like`,
           null,
           {
             headers: {
@@ -75,7 +75,7 @@ const CardContent = () => {
       } else {
         // 좋아요 취소
         await axios.delete(
-          `http://3.34.226.107:8080/api/card-news/${cardId}/like`,
+          `http://3.34.226.107:8000/api/card-news/${cardId}/like`,
           {
             headers: {
               Authorization: token,

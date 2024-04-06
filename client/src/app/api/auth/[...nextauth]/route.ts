@@ -13,7 +13,7 @@ const credentialsProviderOption: CredentialsConfig<{}> = {
     password: { label: "Password", type: "password" },
   },
   async authorize(credentials: Record<string, unknown> | undefined) {
-    const response = await axios.post("http://3.34.226.107:8080/api/auth/login", { email : credentials?.username, password : credentials?.password});
+    const response = await axios.post("http://3.34.226.107:8000/api/auth/login", { email : credentials?.username, password : credentials?.password});
    if (response.data.accessToken){
     return {
         id: response.data.accessToken as string,

@@ -53,7 +53,7 @@ export const Content = ({ params }) => {
   const fetchData = async () => {
     try {
       const response = await axios.get(
-        `http://3.34.226.107:8080/api/question/${params.qid}`,
+        `http://3.34.226.107:8000/api/question/${params.qid}`,
         {
           headers: {
             // 헤더에 Authorization 추가
@@ -72,7 +72,7 @@ export const Content = ({ params }) => {
     setIsCommentLoading(true);
     try {
       const response = await axios.post(
-        `http://3.34.226.107:8080/api/question/${params.qid}/answer`,
+        `http://3.34.226.107:8000/api/question/${params.qid}/answer`,
         {
           content: 'Hello, this is my answer.', // 여기에 content 값을 추가
         },

@@ -20,10 +20,10 @@ const NewsComponent = () => {
     const fetchData = async () => {
       try {
         console.log(
-          `http://3.34.226.107:8080/api/card-news/?pageSize=16&pageNumber=${currentPage}`
+          `http://3.34.226.107:8000/api/card-news/?pageSize=16&pageNumber=${currentPage}`
         );
         const response = await axios.get(
-          `http://3.34.226.107:8080/api/card-news/?pageSize=16&pageNumber=${currentPage}`
+          `http://3.34.226.107:8000/api/card-news/?pageSize=16&pageNumber=${currentPage}`
         );
         setNewsData(response.data.data);
         setTotalPages(response.data.page_count);

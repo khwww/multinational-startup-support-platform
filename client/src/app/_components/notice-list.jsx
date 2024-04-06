@@ -23,7 +23,7 @@ const App = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://3.34.226.107:8080/api/article/?pageNumber=${currentPage}`
+          `http://3.34.226.107:8000/api/article/?pageNumber=${currentPage}`
         );
         setData(response.data.data);
         setPageCount(response.data.page_count);

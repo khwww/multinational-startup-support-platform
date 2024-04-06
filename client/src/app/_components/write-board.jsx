@@ -21,7 +21,7 @@ export default function WritePostPage() {
     setLoading(true);
     try {
       const response = await axios.post(
-        `http://3.34.226.107:8080/api/question/${params.qid}`,
+        `http://3.34.226.107:8000/api/question/${params.qid}`,
         {
           headers: {
             // 헤더에 Authorization 추가
