@@ -69,6 +69,9 @@ const Content = ({ params }) => {
     <main>
       <Container>
         <Intro />
+        <Space className='justify-between mb-3'>
+            <h1 style={{ fontSize: 20, fontWeight: 'bolder' }}>경험공유</h1>
+          </Space>
         <article className='mb-32'>
           <Card
             title={<Title level={3}>제목 : {data.title}</Title>}

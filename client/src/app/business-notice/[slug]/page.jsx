@@ -9,7 +9,7 @@ export default function businessNotice() {
       <Container>
         <Intro />
         <Space className='justify-between mb-3'>
-          <h1 style={{ fontSize: 20, fontWeight: 'bolder' }}>사업공고 게시판</h1>
+          <h1 style={{ fontSize: 20, fontWeight: 'bolder' }}>사업공고</h1>
         </Space>
         <NoticeContent />
       </Container>

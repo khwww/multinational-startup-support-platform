@@ -43,7 +43,7 @@ export function Intro() {
               href='/card-news'
               className='hover:underline'
             >
-              카드 뉴스
+              카드뉴스
             </Link>
           </li>
           <li className='mr-6'>
@@ -57,7 +57,7 @@ export function Intro() {
               href='/community'
               className='hover:underline'
             >
-              경험 공유
+              경험공유
             </Link>
           </li>
           {status !== 'unauthenticated' ? (
