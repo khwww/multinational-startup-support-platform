@@ -13,7 +13,7 @@ import { SmileOutlined } from '@ant-design/icons';
 
 
 export function Intro() {
-  const { data: session, status } = useSession();
+  const { data: session, status } = useSession(); 
   const routeHomePageHandler = (e:any)=>{
     location.href = "/"
   }
